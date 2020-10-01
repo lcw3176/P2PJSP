@@ -71,7 +71,7 @@ CREATE TABLE "JOEBROOKS"."MEMBER"
 
 
 <details>
-<summary>REPLY 테이블</summary>
+<summary>REPLY 테이블 (게시판 댓글) </summary>
 <div markdown="1">
 <pre>
 <code>
@@ -96,19 +96,35 @@ CREATE TABLE "JOEBROOKS"."REPLY"
 |로그인|POST|/login.do/{id,pw}|
 |로그아웃|POST|/logout.do|
 |회원가입|POST|/join.do|
-|내 파일 보여주기, type=(all, video, image, audio), first=(파일 view에 첫 접속인지 판단, 접속했던 폴더 경로 초기화) |GET|/showall.do/{type,page,first}|
+|내 파일 보여주기|GET|/showall.do/{type,page,first}|
 |파일 삭제|GET|/filedelete.do/{fileName}|
 |파일 다운로드|GET|/filedownload.do/{fileName}|
 |파일 업로드|GET|/fileupload.do/{fileName}|
 |폴더 삭제|GET|/folderdelete.do/{folderName}|
-|하위, 상위 폴더로 이동, query=(back, search)|GET|/foldermove.do/{query, folderName}|
+|하위, 상위 폴더로 이동|GET|/foldermove.do/{query, folderName}|
 |폴더 만들기|GET|/folderupdate.do/{folderName}|
-|게시판 글 목록 보여주기, page=(null이면 1페이지로 설정), search=(게시글 검색시 사용)|GET|/showboard.do/{page, search}|
-|작성한 글 보여주기, idx=(인덱스), title=(제목), redirect=(리다이렉트 여부 표시, 조회수에 영향), commentPage=(댓글 페이지, null일시 1로 설정)|GET|/showcontent.do/{idx, title, redirect, commentPage}
-|게시글 작성, state=(write:작성 준비, complete:작성 완료)|GET|/boardwrite.do/{state}
+|게시판 글 목록 보여주기|GET|/showboard.do/{page, search}|
+|작성한 글 보여주기|GET|/showcontent.do/{idx, title, redirect, commentPage}
+|게시글 작성|GET|/boardwrite.do/{state}
 |게시글 삭제|GET|/boardremove.do/{idx}|
 |댓글 작성|POST|/bardcomment.do/{idx, title}|
 |공유 폴더 보여주기|GET|/showguest.do/{id, folderName}|
+
+### 쿼리스트링 부연설명
+#### showall.do
+*  type=(all, video, image, audio), first=(파일 view에 첫 접속인지 판단, 접속했던 폴더 경로 초기화) 
+
+#### foldermove.do
+*  , query=(back:뒤로가기, search:폴더 접근)
+
+#### showboard.do
+*  page=(null이면 1페이지로 설정), search=(게시글 검색시 사용)
+
+#### showcontent.do
+* idx=(인덱스), title=(제목), redirect=(리다이렉트 여부 표시, 조회수에 영향), commentPage=(댓글 페이지, null일시 1로 설정)
+
+#### boardwrite.do
+*  state=(write:작성 준비, complete:작성 완료)
 
 ## 개발 환경
 * Java, TomCat
