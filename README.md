@@ -98,8 +98,8 @@ CREATE TABLE "JOEBROOKS"."REPLY"
 |회원가입|POST|/join.do|
 |내 파일 보여주기|GET|/showall.do/{type,page,first}|
 |파일 삭제|GET|/filedelete.do/{fileName}|
-|파일 다운로드|GET|/filedownload.do/{fileName}|
-|파일 업로드|GET|/fileupload.do/{fileName}|
+|파일 다운로드|POST|/filedownload.do/{fileName}|
+|파일 업로드|POST|/fileupload.do/{fileName}|
 |폴더 삭제|GET|/folderdelete.do/{folderName}|
 |하위, 상위 폴더로 이동|GET|/foldermove.do/{query, folderName}|
 |폴더 만들기|GET|/folderupdate.do/{folderName}|
