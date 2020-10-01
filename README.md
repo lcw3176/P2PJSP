@@ -105,7 +105,7 @@ CREATE TABLE "JOEBROOKS"."REPLY"
 |폴더 만들기|GET|/folderupdate.do/{folderName}|
 |게시판 글 목록 보여주기|GET|/showboard.do/{page, search}|
 |작성한 글 보여주기|GET|/showcontent.do/{idx, title, redirect, commentPage}
-|게시글 작성|GET|/boardwrite.do/{state}
+|게시글 작성|POST|/boardwrite.do/{state}
 |게시글 삭제|GET|/boardremove.do/{idx}|
 |댓글 작성|POST|/bardcomment.do/{idx, title}|
 |공유 폴더 보여주기|GET|/showguest.do/{id, folderName}|
