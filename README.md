@@ -112,33 +112,33 @@ CREATE TABLE "JOEBROOKS"."REPLY"
 
 ### 쿼리스트링 부연설명
 
-> showall.do
->	>  type
->	>	> all : 전부 보여주기 
->	>	> video : 동영상 파일만 보여주기 
->	>	> image: 이미지 파일만 보여주기
->	>	> audio: 오디오 파일만 보여주기
->	>  first: 파일 view에 첫 접속인지 판단, 접속했던 폴더 경로 초기화 
+- showall.do
+	-  type
+		- all : 전부 보여주기 
+		- video : 동영상 파일만 보여주기 
+		- image: 이미지 파일만 보여주기
+		- audio: 오디오 파일만 보여주기
+	-  first: 파일 view에 첫 접속인지 판단, 접속했던 폴더 경로 초기화 
 
-> foldermove.do
->	> query
->	>	> back:뒤로가기 
->	>	> search:폴더 접근
+- foldermove.do
+	- query
+		- back:뒤로가기 
+		- search:폴더 접근
 
-> showboard.do
->	> page: null이면 1페이지로 설정 
->	> search: 게시글 검색시 사용
+- showboard.do
+	- page: null이면 1페이지로 설정 
+	- search: 게시글 검색시 사용
 
-> showcontent.do
->	> idx: 인덱스
->	> title: 제목 
->	> redirect: 리다이렉트 여부 표시, 조회수에 영향 
->	> commentPage: 댓글 페이지, null일시 1로 설정
+- showcontent.do
+	- idx: 인덱스
+	- title: 제목 
+	- redirect: 리다이렉트 여부 표시, 조회수에 영향 
+	- commentPage: 댓글 페이지, null일시 1로 설정
 
-> boardwrite.do
->	> state
->	>	> write: 작성 준비 
->	>	> complete: 작성 완료
+- boardwrite.do
+	- state
+		- write: 작성 준비 
+		- complete: 작성 완료
 
 ## 개발 환경
 * Java, TomCat
