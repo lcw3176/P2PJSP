@@ -60,7 +60,7 @@ CREATE TABLE "JOEBROOKS"."BOARD"
 CREATE TABLE "JOEBROOKS"."MEMBER" 
 (	
 	"ID" VARCHAR2(30 BYTE) NOT NULL ENABLE, 
-	"PW" VARCHAR2(30 BYTE) NOT NULL ENABLE, 
+	"PW" VARCHAR2(64 BYTE) NOT NULL ENABLE, 
 	 CONSTRAINT "MEMBER_PK" PRIMARY KEY ("ID")
   )
 
@@ -160,6 +160,9 @@ CREATE TABLE "JOEBROOKS"."REPLY"
 * 댓글 작성기능
 * 게시글 검색 기능
 * 공유 링크 기능으로 자신의 클라우드 게스트 폴더 접속 링크를 올릴 수 있음.
+
+### 유저 관리 (2020.10.04 수정)
+* 회원가입시 비밀번호 SHA-256 암호화
 
 ## 작동 모습
 ### [홈, 비회원 접근 제한, 로그인]

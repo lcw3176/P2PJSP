@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.joebrooks.shareApp.common.EncSha256;
 import com.joebrooks.shareApp.controller.CommandAction;
 import com.joebrooks.shareApp.model.dao.MemberDAO;
 import com.joebrooks.shareApp.model.dto.MemberDTO;
@@ -40,8 +41,10 @@ public class JoinAction implements CommandAction{
 			}
 			
 		}
+		EncSha256 sha = new EncSha256();
+		String encPw = sha.GetSha(pw);
 		
-		MemberDTO newMember = new MemberDTO(id, pw);
+		MemberDTO newMember = new MemberDTO(id, encPw);
 		dao.insert(newMember);
 		
 		HttpSession session = request.getSession();

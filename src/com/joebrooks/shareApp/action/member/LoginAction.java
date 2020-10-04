@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.joebrooks.shareApp.common.EncSha256;
 import com.joebrooks.shareApp.controller.CommandAction;
 import com.joebrooks.shareApp.model.dao.MemberDAO;
 import com.joebrooks.shareApp.model.dto.MemberDTO;
@@ -21,7 +22,10 @@ public class LoginAction implements CommandAction{
 			return "/view/login.jsp";
 		}
 		
-		MemberDTO dto = new MemberDTO(id, pw);
+		EncSha256 sha = new EncSha256();
+		String encPw = sha.GetSha(pw);
+		
+		MemberDTO dto = new MemberDTO(id, encPw);
 		MemberDAO dao = MemberDAO.getInstance();
 		
 		boolean loginResult = dao.login(dto);
@@ -34,9 +38,16 @@ public class LoginAction implements CommandAction{
 			session.setAttribute("dynamicPath", "");
 			System.out.println(id + " 로그인함");
 			
+			return "redirect:/P2PJSP/showboard.do";
 		} 
 		
-		return "redirect:/P2PJSP/showboard.do";
+		else {
+			request.setAttribute("errorcode", "notFound");	
+			
+			return "/view/login.jsp";
+		}
+		
+		
 				
 	}
 

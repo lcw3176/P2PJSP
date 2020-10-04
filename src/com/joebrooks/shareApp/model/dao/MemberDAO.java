@@ -83,9 +83,10 @@ public class MemberDAO {
 		finally {
 			closeDB();
 		}
-
 		
-		if(id.equals(dto.getId()) && pw.equals(dto.getPw())) {
+		if(id == null) {
+			return false;
+		} else if(id.equals(dto.getId()) && pw.equals(dto.getPw())) {
 			return true;
 		} else {
 			return false;
