@@ -142,7 +142,7 @@ CREATE TABLE "JOEBROOKS"."REPLY"
 
 ## 개발 환경
 * Java, TomCat
-* HTML, CSS, JavaScript
+* JSP, CSS, JavaScript
 * Ajax, bootstrap
 * Oracle DB
 
