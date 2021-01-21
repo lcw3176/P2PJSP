@@ -90,7 +90,7 @@ CREATE TABLE "JOEBROOKS"."REPLY"
 </div>
 </details>
 
-## REST API
+## URL 구조 
 |Task|Method|Path|
 |-----------|-----|--------|
 |로그인|POST|/login.do/{id,pw}|
